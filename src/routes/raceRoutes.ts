@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getAllRaces, getRaceById, getRaceSkillsById } from '../controllers/raceController';
+import { getAllRaces, getRaceById, getAbilityByRace } from '../controllers/raceController';
 import asyncHandler from '../utils/asyncHandler';
 
 
@@ -12,6 +12,6 @@ router.get('/races', getAllRaces);
 router.get('/races/:id', asyncHandler(getRaceById));
 
 // Endpoint 3: Retorna as habilidades de uma raça específica
-router.get('/races/:id/skills',  asyncHandler(getRaceSkillsById));
+router.get('/races/:id/skills',  asyncHandler(getAbilityByRace));
 
 export default router;
